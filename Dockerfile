@@ -16,3 +16,6 @@ RUN rm /var/cache/apk/*
 
 # Install ansible
 RUN apk add ansible
+
+USER jenkins
+WORKDIR /home/jenkins
