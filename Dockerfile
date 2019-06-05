@@ -3,7 +3,7 @@ FROM jenkins/jnlp-slave:alpine
 USER root
 WORKDIR /
 
-RUN apk update && apk -Uuv add groff less python py-pip curl
+RUN apk update && apk -Uuv add groff less python py-pip curl terraform
 RUN pip install awscli && apk --purge -v del py-pip
 
 RUN curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /bin
