@@ -10,7 +10,7 @@ RUN curl --silent --location "https://github.com/weaveworks/eksctl/releases/down
 RUN curl -o /bin/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod 755 /bin/kubectl
 RUN curl -o /bin/aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/aws-iam-authenticator && chmod 755 /bin/aws-iam-authenticator
 RUN curl -o helm.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v2.14.0-linux-amd64.tar.gz && tar zxvf helm.tar.gz && mv ./linux-amd64/helm /usr/bin/helm && chmod 755 /usr/bin/helm
-RUN sudo curl -o /bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest && chmod +X /bin/ecs-cli
+RUN curl -o /bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest && chmod +X /bin/ecs-cli
 
 USER jenkins
 WORKDIR /home/jenkins
